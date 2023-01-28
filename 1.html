@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var company = {
+        //     address: 'beijing'
+        // }
+        // var yideng = Object.create(company);
+        // delete yideng.address
+        // console.log(yideng.address);
+        // console.log(Object.create(company));
+
+        // 父类
+        function Phone(brand, price){
+            this.brand = brand;
+            this.price = price;
+        }
+        // 声明父类的方法
+        Phone.prototype.call = function(){ 
+            console.log('打电话')
+        }
+
+        // 子类
+        function SmartPhone(brand, price, color, size){
+            // 继承父类的属性
+            Phone.call(this, brand, price);
+            this.color = color;
+            this.size = size;
+        }
+        // 进行继承
+        SmartPhone.prototype = new Phone;
+
+        // 声明子类的方法
+        SmartPhone.prototype.photo = function(){ 
+            console.log('拍照')
+        }
+
+        const xiaomi = new SmartPhone('xiaomi', 2699, 'black', '14inch');
+        console.log(xiaomi);
+
+        // et obj1 = {
+        //     name: "张三",
+        //     age: 24,
+        //     user: function (args) {
+        //         console.log('obj1');
+        //         console.log("姓名：", this.name);
+        //         console.log("年龄：", this.age);
+        //         console.log("参数", args);
+        //     }
+        // }
+        // let obj2 = {
+        //     name: "李四",
+        //     age: 30,
+        //     user: function (args) {
+        //         console.log('obj2');
+        //         console.log("姓名：", this.name);
+        //         console.log("年龄：", this.age);
+        //         console.log("参数", args);
+        //     }
+        // }
+        // // 正常的调用
+        // // obj1.user('我是参数');
+        // // obj2.user('我是参数');
+
+        // // 改变this指向
+        // obj1.user.call(obj2, "我是参数"); // 使用call方法改变
+        // obj2.user.apply(obj1,l ["我是参数"]); // 使用apply方法改变
+    </script>
+</body>
+</html>
