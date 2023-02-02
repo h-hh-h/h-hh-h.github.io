@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="one">1
+        <span class="two">2</span>
+    </div>
     <script>
         // var company = {
         //     address: 'beijing'
@@ -16,33 +19,33 @@
         // console.log(yideng.address);
         // console.log(Object.create(company));
 
-        // 父类
-        function Phone(brand, price){
-            this.brand = brand;
-            this.price = price;
-        }
-        // 声明父类的方法
-        Phone.prototype.call = function(){ 
-            console.log('打电话')
-        }
+        // // 父类
+        // function Phone(brand, price){
+        //     this.brand = brand;
+        //     this.price = price;
+        // }
+        // // 声明父类的方法
+        // Phone.prototype.call = function(){ 
+        //     console.log('打电话')
+        // }
 
-        // 子类
-        function SmartPhone(brand, price, color, size){
-            // 继承父类的属性
-            Phone.call(this, brand, price);
-            this.color = color;
-            this.size = size;
-        }
-        // 进行继承
-        SmartPhone.prototype = new Phone;
+        // // 子类
+        // function SmartPhone(brand, price, color, size){
+        //     // 继承父类的属性
+        //     Phone.call(this, brand, price);
+        //     this.color = color;
+        //     this.size = size;
+        // }
+        // // 进行继承
+        // SmartPhone.prototype = new Phone;
 
-        // 声明子类的方法
-        SmartPhone.prototype.photo = function(){ 
-            console.log('拍照')
-        }
+        // // 声明子类的方法
+        // SmartPhone.prototype.photo = function(){ 
+        //     console.log('拍照')
+        // }
 
-        const xiaomi = new SmartPhone('xiaomi', 2699, 'black', '14inch');
-        console.log(xiaomi);
+        // const xiaomi = new SmartPhone('xiaomi', 2699, 'black', '14inch');
+        // console.log(xiaomi);
 
         // et obj1 = {
         //     name: "张三",
@@ -71,6 +74,41 @@
         // // 改变this指向
         // obj1.user.call(obj2, "我是参数"); // 使用call方法改变
         // obj2.user.apply(obj1,l ["我是参数"]); // 使用apply方法改变
+
+        // // 栈数据结构
+        // class Stack{
+        //     constructor(){
+        //         this.s = [];
+        //     }
+        //     in(value){
+        //         this.s.push(value);
+        //     }
+        //     out(){
+        //         if(this.size() === 0)
+        //             return null
+        //         return this.s.pop()
+        //     }
+        //     top(){
+        //         if(this.size() === 0)
+        //             return null;
+        //         return this.s[this.size() - 1]
+        //     }
+        //     size(){
+        //         console.log('size')
+        //         return this.s.length;
+        //     }
+        // }
+        // const stack = new Stack()
+        // stack.in('x')
+        // stack.in('y')
+        // stack.in('z')
+        // console.log(stack.top())
+        // console.log(stack.size())
+        // console.log(stack.out())
+        // console.log(stack.top())
+        // console.log(stack.size())
+        if(2)
+            console.log('1')
     </script>
 </body>
 </html>
