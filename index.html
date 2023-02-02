@@ -4,26 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./module/zero-md.min.js"></script>
     <title>一些笔记</title>
 </head>
 <body>
-    <a href="./HTML.md">HTML笔记</a>
-    <br>
-    <hr>
-    <a href="./CSS.md">CSS笔记</a>
-    <br>
-    <hr>
-    <a href="./JS.md">JS笔记</a>
-    <br>
-    <hr>
-    <a href="./计网.md">计网笔记</a>
-    <br>
-    <hr>
-    <a href="./git.md">Git笔记</a>
-    <br>
-    <hr>
-    <a href="./笔试.md">笔试记录</a>
-    <br>
-    <hr>
+    <div class="whole">
+        <ul class="listView">
+            <li>
+                <span data-href="./HTML.md">HTML笔记</span>
+            </li>
+            <li>
+                <span data-href="./CSS.md">CSS笔记</span>
+            </li>
+            <li>
+                <span data-href="./JS.md">JS笔记</span>    
+            </li>
+            <li>
+                <span data-href="./计网.md">计网笔记</span>
+            </li>
+            <li>
+                <span data-href="./git.md">Git笔记</span>
+            </li>
+            <li>
+                <span data-href="./笔试.md">笔试记录</span>
+            </li>
+        </ul>
+        <div class="mdView">
+            <zero-md src="JS.md"></zero-md>
+        </div>
+    </div>
+    <script>
+        let fileDir;
+        const mdList = document.getElementsByClassName("listView")[0].children;
+        const view = document.getElementsByClassName('mdView')[0].children[0];
+        for(let i = 0; i < mdList.length; i++){
+            mdList[i].children[0].addEventListener('click', function(){
+                fileDir = mdList[i].children[0].getAttribute('data-href');
+                view.setAttribute('src', fileDir)
+                console.log(fileDir);
+            })
+        }
+    </script>
+    <style>
+        .whole{
+            display: flex;
+            justify-content: space-between;
+        }
+        .listView{
+            position: fixed;
+            top: 0;
+            right: 0;
+            border-right: 1px black solid;
+            padding-right: 10px;
+        }
+        .listView li{
+            margin-top: 10px;
+        }
+        .listView span{
+            border-bottom: 1px black solid;
+            font-size: 10px;
+            cursor: pointer;
+        }
+        .mdView{
+            padding-left: 10px;
+            padding-right: 30px;
+            width: 800px;
+        }
+    </style>
 </body>
 </html>
