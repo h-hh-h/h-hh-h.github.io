@@ -54,22 +54,30 @@
             position: fixed;
             top: 0;
             right: 0;
-            border-right: 1px black solid;
-            padding-right: 10px;
+            border-left: 1px black solid;
+            margin-right: -1em;
+            /* padding-right: 10px; */
+            list-style-type: none;
             z-index: 1;
         }
         .listView li{
+            position: relative;
+            left: -50%;
             margin-top: 10px;
         }
         .listView span{
             border-bottom: 1px black solid;
             font-size: 10px;
             cursor: pointer;
+            opacity: 0.5;
+        }
+        .listView span:hover{
+            opacity: 1;
         }
         .mdView{
             padding-left: 10px;
             padding-right: 30px;
-            width: 800px;
+            width: 80%;
         }
     </style>
 </body>
