@@ -265,7 +265,7 @@
             2. 当前正在遍历的元素索引
             3. 正在遍历的数组
             ```
-            数组.forEach(function(item, index, obj){
+            数组.map(function(item, index, obj){
                 ...
             })
             ```

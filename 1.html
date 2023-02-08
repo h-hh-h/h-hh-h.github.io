@@ -107,8 +107,23 @@
         // console.log(stack.out())
         // console.log(stack.top())
         // console.log(stack.size())
-        if(2)
-            console.log('1')
+        const objArr = [{id:1, name:"张三"}, {id:2, name:"李四"}, {id:3, name:"王五"}]
+        const arr = objArr.reduce((pre, cur)=>{
+            console.log('pre:', pre);
+            console.log('cur', cur);
+            if(pre.length !== 0){
+                for(const i=0; i<pre.length; i++){
+                    if(pre[i].id === cur.id){
+                        return pre;
+                    }else{
+                        return [...pre,cur];
+                    }
+                }
+            }else{
+                return [cur];
+            }
+        },[])
+        console.log('res', arr);
     </script>
 </body>
 </html>
