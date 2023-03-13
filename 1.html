@@ -126,13 +126,108 @@
         // },[])
         // console.log('res', arr);
 
-        var a=[1,2,3];
-        var b=a;
-        // var b=a.slice();
-        b.push(4);
-        console.log(a,b);
+        // var a=[1,2,3];
+        // var b=a;
+        // // var b=a.slice();
+        // b.push(4);
+        // console.log(a,b);
+
+        // const a={};
+        // const b={key:"b"};
+        // const c={key:"c"};
+        // const d=1;
+        // const e=2;
+        // const f='1';
+        // const h='2';
+        // a[b]=123;
+        // a[c]=456;
+        // a[d]=123;
+        // a[e]=456;
+        // a[f]=123456;
+        // a[h]=456789;
+        // console.log(a);
+
+
+        // const fn = function(){
+        //     let res=[];
+        //     for(let i=1; i<=10000; i++){
+        //         let str = i+'';
+        //         if(str.length === 2 || str.length === 3){
+        //             if(str[0] === str[str.length-1]){
+        //                 // console.log(str);
+        //                 res.push(str);
+        //             }
+        //         }else if(str.length === 4){
+        //             if(str[0] === str[str.length-1] && str[1] === str[str.length-2]){
+        //                 // console.log(str);
+        //                 res.push(str);
+        //             }
+        //         }
+        //     }
+        //     console.log(res);
+        // }
+        // fn();
+
+        // let result = [];
+        // for(let i=1;i<10;i++){  
+        //     result.push(i*11); // 两位数的对称数
+        //     for(let j=0;j<10;j++){
+        //         result.push(i*101+j*10) //  三位数的对称数
+        //         result.push(i*1001+j*110) // 四位数的对称数，当i和j均为9是值为9999
+        //     }
+        // }
+        // console.log(result);
+        
+        // const se = new Set([1,2,3,4,5]);
+        // console.log(se)
+        // console.log(se.has(1));
+        
+        // let s1='a';
+        // let s2='adfeadea';
+        // let i=0;
+        // let j=0;
+        // let count=0;
+        // while(i<=s2.length){
+        //     if(j>s1.length-1){
+        //         count++;
+        //         i=i-j+1;
+        //         j=0;
+        //     }else{
+        //         if(s1[j] === s2[i]){
+        //             // console.log(s1[j]);
+        //             // console.log(s2[i]);
+        //             i++;
+        //             j++;
+        //         }else{
+        //             i=i-j+1;
+        //             j=0;
+        //         }
+        //     }
+        // }
+        // console.log(count);
+        // console.log(s2.split(s1))
+
+        let string='string';
+        let number=0;
+        let bool=true;
+        console.log(number||string);
+        console.log(number&&string);
+        console.log(bool||number);
+        console.log(bool&&number);
     </script>
     <style>
+        @keyframes trans {
+            0%{ -webkit-transform: rotate(0deg); }
+            50%{ -webkit-transform: rotate(180deg); }
+            100%{ -webkit-transform: rotate(360deg); }
+        }
+        .two{
+            display: inline-block;
+            -webkit-animation: trans 2s linear infinite;
+        }
+        .two:hover{
+            animation-play-state: paused;
+        }
         /* body{
             filter: alpha(opacity=80);
             opacity: 5%;
